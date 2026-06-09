@@ -11,7 +11,7 @@ One VM → JupyterHub → DockerSpawner → one isolated container per user.
 
 ```bash
 # 1. Clone
-git clone https://github.com/YOUR-USERNAME/salma-platform.git
+git clone https://github.com/Salma-87/salma-platform.git
 cd salma-platform
 
 # 2. Build notebook image

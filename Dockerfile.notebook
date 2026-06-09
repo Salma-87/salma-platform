@@ -1,0 +1,12 @@
+FROM quay.io/jupyterhub/singleuser:4.1
+
+RUN pip install --no-cache-dir \
+    scikit-learn \
+    mlflow \
+    matplotlib \
+    seaborn \
+    xgboost \
+    pandas \
+    numpy
+
+WORKDIR /home/jovyan/work

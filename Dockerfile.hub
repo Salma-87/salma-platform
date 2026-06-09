@@ -1,0 +1,16 @@
+# Dockerfile.hub
+# Builds the JupyterHub image with DockerSpawner and NativeAuthenticator
+FROM jupyterhub/jupyterhub:4
+
+# Install DockerSpawner (creates per-user containers)
+# and NativeAuthenticator (username/password login)
+RUN pip install --no-cache-dir \
+    dockerspawner \
+    jupyterhub-nativeauthenticator
+
+# Copy configuration
+COPY jupyterhub_config.py /srv/jupyterhub/jupyterhub_config.py
+
+EXPOSE 8000
+
+CMD ["jupyterhub", "-f", "/srv/jupyterhub/jupyterhub_config.py"]
